@@ -1,6 +1,5 @@
 import * as React from "react"
 import { nutritionFacts } from "../../constants"
-console.log('nutritionFacts: ', nutritionFacts);
 import "./NutritionalLabel.css"
 
 export function NutritionalLabel({item}) {

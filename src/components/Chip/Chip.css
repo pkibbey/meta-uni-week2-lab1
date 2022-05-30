@@ -29,7 +29,12 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px;
+  min-width: 20px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
 }
 .chip.active .close {
   display: block;
