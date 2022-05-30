@@ -23,7 +23,9 @@ export function testIteration(App) {
     const categoryParagraphs = results.root.findAll(
       (node) => node.type === "p" && node.parent.props.className.split(" ").includes("categories")
     )
+    
     const categoryChips = results.Chip.filter((chip) => chip.parent.props.className.split(" ").includes("categories"))
+    
     const restaurantParagraphs = results.root.findAll(
       (node) => node.type === "p" && node.parent.props.className.split(" ").includes("restaurants")
     )
