@@ -13,9 +13,9 @@ export function Chip({ label = "", isActive = false, onClick, handleClear}) {
       }}
     >
       <p className="label">{label}</p>
-      <span className="close" role="button" onClick={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
+      <span className="close" role="button" onClick={function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         handleClear && handleClear('')
       }}>{`X`}</span>
     </button>

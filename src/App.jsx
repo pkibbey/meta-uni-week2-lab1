@@ -26,16 +26,12 @@ const { data, categories, restaurants } = createDataSet()
 
 export function App() {
   const [selectedRestaurant, setSelectedRestaurant] = useState('');
-  console.log('selectedRestaurant: ', selectedRestaurant);
   const [selectedCategory, setSelectedCategory] = useState('');
-  console.log('selectedCategory: ', selectedCategory);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   
   const currentMenuItems = selectedCategory !== '' ? data.filter(item => item.food_category === selectedCategory) : data
-  console.log('currentMenuItems: ', currentMenuItems);
   const filteredMenuItems = selectedRestaurant !== '' ? currentMenuItems.filter(item => item.restaurant === selectedRestaurant) : currentMenuItems
-  console.log('filteredMenuItems: ', filteredMenuItems);
-
+  
   return (
     <main className="App">
       <CategoriesColumn />
@@ -74,7 +70,6 @@ export function App() {
       <div className="MenuItemButtons menu-items">
         <h2 className="title">Menu Items</h2>
         {!!selectedCategory && !!selectedRestaurant && filteredMenuItems.map((menuItem, index) => {
-          console.log('menuItem: ', menuItem);
           return <Chip
             key={index}
             label={menuItem.item_name}

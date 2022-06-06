@@ -111,9 +111,7 @@ export function testRenderStateValues(App) {
     assert.not.ok(menuItemChip, `Menu item Chips should not be rendered before a category and restaurant are selected`)
 
     const categoryChipParagraph = getByText(burgersCategory)
-    console.log('categoryChipParagraph: ', categoryChipParagraph);
     const categoryChip = categoryChipParagraph?.parentElement
-    console.log('categoryChip: ', categoryChip);
     
     const restaurantChipParagraph = getByText(inNOutRestaurant)
     const restaurantChip = restaurantChipParagraph?.parentElement
@@ -151,17 +149,12 @@ export function testRenderStateValues(App) {
   })
 
   FeatureTestSuite.test("Clicking on a menu item renders the `NutritionalFacts` component", async (ctx) => {
-    console.log('hERe 0')
     const renderQueries = setupMenuItems()
-    console.log('renderQueries: ', renderQueries.container);
     const doubleDoubleChip = await getDoubleDoubleMenuItem(renderQueries.container)
-    console.log('hERe 1')
 
     assert.ok(doubleDoubleChip, `Menu Item Chip for ${doubleDoubleMenuItem} could not be found`)
 
     fireEvent.click(doubleDoubleChip)
-
-    console.log('hERe 2')
 
     // ensure the nutritional facts component is rendered
     const nutritionalFacts = renderQueries.queryByText("Nutrition Facts", { selector: "h3" })
