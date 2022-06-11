@@ -22,13 +22,3 @@
   display: flex;
   flex-direction: column;
 }
-
-.nutritional-label .nutrition-fact {
-  border-bottom: solid 1px rgb(202, 202, 202);
-  font-weight: bold;
-  margin: 2px 0;
-}
-
-.nutritional-label .nutrition-fact span.fact-value {
-  font-weight: normal;
-}
